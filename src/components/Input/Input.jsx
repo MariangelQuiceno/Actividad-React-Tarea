@@ -8,8 +8,11 @@ export const Input = () => {
   const inputReference = useRef('');
 
   const handleSetTask = () => {
-    let response = inputReference.current.value;
-    console.log(response);
+    const newTask = inputReference.current.value;
+    if (newTask.trim() !== '') { // Verifica que la nueva tarea no esté vacía
+      setTasks(prevTasks => [...prevTasks, newTask]); // Agrega la nueva tarea al arreglo tasks
+      inputReference.current.value = ''; // Limpia el input después de agregar la tarea
+    }
   };
 
   const [tasks, setTasks] = useState(homeworkBurn);
