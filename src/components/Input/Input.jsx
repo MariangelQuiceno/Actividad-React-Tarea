@@ -1,21 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './inputCss.css'
-import { Lists } from '../Lists/Lists'
 
-const homeworkBurn = ['Tarea Ingles', 'Organizar Habitación']
 
-const listItems = homeworkBurn.map((homework) =>  <li>{homework}</li>);
+const homeworkBurn = ['Tarea Ingles', 'Organizar Habitación', 'Organizar Cuarto']
 
 export const Input = () => {
+    const [tasks, setTasks] = useState(homeworkBurn);
   return (
     <div>
         <label>
-        <input className='homework-input' placeholder='Ingrese la Tarea' />
+        <input ref='inputRef' className='homework-input' placeholder='Ingrese la Tarea' type="text" />
       </label>
-      <button> Crear Tarea</button>
+      <button onClick={handleSetTask}> Crear Tarea</button>
       <hr />
 
-   
+    <div className='lists-items-div'>
+    <ul>
+    {tasks.map((task, index) => (
+         <li key={index}>{task}</li>
+    ))}
+
+        </ul>
+    </div>
 
     </div>
 
