@@ -1,0 +1,21 @@
+
+.homework-input{
+    width: 30rem;
+    height: 2rem;
+    color: rgb(255, 255, 255);
+    background-color: #ffffff3c;
+}
+.homework-input:hover{
+    width: 30rem;
+    color: rgb(255, 255, 255);
+    background-color: #37373739;
+}
+
+button{
+    margin-left: 1rem;
+    background-color: rgba(105, 105, 105, 0.542);
+}
+
+button:hover{
+    margin-left: 1rem; 
+}
